@@ -5,7 +5,6 @@ let app = express()
 
 app.get('/generate', async function (req, res) {
   let query = req.query || ''
-  console.log(query)
   let url = ' https://quickchart.io/chart'
   let config = {
     method: 'get',
