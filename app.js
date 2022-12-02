@@ -47,12 +47,12 @@ app.post('/generate', async function (req, res) {
   axios(config)
     .then(function (response) {
       let base64 = Buffer.from(response.data, 'binary').toString('base64')
-      return res.json({
+      return res.status(200).json({
         base64,
       })
     })
     .catch(function (error) {
-      return res.json({
+      return res.status(500).json({
         error,
       })
     })
