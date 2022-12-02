@@ -30,6 +30,10 @@ app.get('/generate', async function (req, res) {
     })
 })
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.listen(5000, function () {
   console.log('Server Started!')
 })
