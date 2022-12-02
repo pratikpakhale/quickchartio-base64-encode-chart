@@ -3,14 +3,18 @@ let express = require('express')
 const axios = require('axios')
 let app = express()
 
-app.get('/generate/:obj', async function (req, res) {
-  let params = req.params.obj || {}
+app.get('/generate', async function (req, res) {
+  let query = req.query || ''
+  console.log(query)
   let url = ' https://quickchart.io/chart'
   let config = {
     method: 'get',
     responseType: 'arraybuffer',
     url: url,
-    params,
+    params: {
+      c: query.c || '',
+      bkg: query.bkg || 'white',
+    },
   }
   axios(config)
     .then(function (response) {
@@ -26,6 +30,6 @@ app.get('/generate/:obj', async function (req, res) {
     })
 })
 
-app.listen(3000, function () {
+app.listen(5000, function () {
   console.log('Server Started!')
 })
