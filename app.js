@@ -1,18 +1,16 @@
 //basic express server
-var express = require('express')
+let express = require('express')
 const axios = require('axios')
-var app = express()
+let app = express()
 
 app.get('/generate/:obj', async function (req, res) {
-  var obj = req.params.obj || {}
-  var url = ' https://quickchart.io/chart'
-  var config = {
+  let params = req.params.obj || {}
+  let url = ' https://quickchart.io/chart'
+  let config = {
     method: 'get',
     responseType: 'arraybuffer',
     url: url,
-    params: {
-      c: obj,
-    },
+    params,
   }
   axios(config)
     .then(function (response) {
