@@ -9,7 +9,7 @@ A custom API built over [quickchart.io](https://quickchart.io).
 
 #### Get Base64 encoded image string
 
-```http
+```bash
   POST https://base64-encode-quickchart.onrender.com/generate
 ```
 
