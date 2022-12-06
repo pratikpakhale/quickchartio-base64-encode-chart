@@ -13,6 +13,6 @@ A custom API built over [quickchart.io](https://quickchart.io).
   POST https://base64-encode-quickchart.onrender.com/generate
 ```
 
-| Parameter | Type     | Description                |
+| Query Parameters | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `c` | `object` | **Required**. |
